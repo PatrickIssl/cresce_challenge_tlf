@@ -16,9 +16,7 @@ interface DiscountProps {
 }
 
 function DiscountForm({ product, handleSubmit }: DiscountProps) {
-  const [fakeStoreProducts, setFakeStoreProducts] = useState<
-    FakeStoreProduct[]
-  >([]);
+  const [fakeStoreProducts, setFakeStoreProducts] = useState<FakeStoreProduct[]>([]);
   const [selectedProduct, setSelectedProduct] = useState<string>("");
   const [image, setImage] = useState<string | null>(null);
   const [discountType, setDiscountType] = useState("");
@@ -42,6 +40,7 @@ function DiscountForm({ product, handleSubmit }: DiscountProps) {
   });
 
   const fileInputRef = useRef<HTMLInputElement>(null);
+  
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
@@ -55,7 +54,7 @@ function DiscountForm({ product, handleSubmit }: DiscountProps) {
       setSelectedProduct(product.fakeProductId);
       setDiscountType(product.type ? product.type.toUpperCase() : "");
       setFormData(product);
-      setImage(product.image)
+      setImage(product.image);
     }
   }, [product]);
 
@@ -89,9 +88,7 @@ function DiscountForm({ product, handleSubmit }: DiscountProps) {
   };
 
   const handleInputChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -105,9 +102,7 @@ function DiscountForm({ product, handleSubmit }: DiscountProps) {
     setSelectedProduct(productId);
 
     if (productId) {
-      const selected = fakeStoreProducts.find(
-        (p) => p.id.toString() === productId
-      );
+      const selected = fakeStoreProducts.find((p) => p.id.toString() === productId);
       if (selected) {
         setFormData((prev) => ({
           ...prev,
@@ -142,9 +137,7 @@ function DiscountForm({ product, handleSubmit }: DiscountProps) {
 
         <div className="bg-white p-4 md:p-6 mt-4 rounded-lg shadow-sm">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 border-b border-b-gray-200 pb-4">
-            <h2 className="text-lg mb-2 md:mb-0">
-              Formulário cadastro desconto
-            </h2>
+            <h2 className="text-lg mb-2 md:mb-0">Formulário cadastro desconto</h2>
             <div className="flex items-center">
               <span className="mr-2 text-sm md:text-base">Ativo</span>
               <label className="relative inline-flex items-center cursor-pointer">
@@ -171,10 +164,11 @@ function DiscountForm({ product, handleSubmit }: DiscountProps) {
             }}
           >
             <div>
-              <label className="block text-sm font-medium mb-1">
+              <label htmlFor="product-select" className="block text-sm font-medium mb-1">
                 Selecionar Produto
               </label>
               <select
+                id="product-select"
                 value={selectedProduct}
                 onChange={handleProductSelect}
                 className="w-full p-2 border rounded text-sm md:text-base"

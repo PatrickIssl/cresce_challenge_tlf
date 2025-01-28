@@ -6,9 +6,7 @@ O Sistema foi criado utilizando LocalStorage nas duas partes da aplicação, uti
 
 Realizei tambem a implementação de um container Docker para facilitar configuração e execução do sistema em diferentes ambientes.
 
-
 ## Instruções de instalação e execução
-
 
 ### Versões utilizadas :
 
@@ -34,7 +32,6 @@ dart: 3.6.1
 
 4 - acessar a aplicação pelo http://localhost:3000
 
-
 ### Sistema Web npm:
 
 1 - certificar que tem o node e o npm instalado
@@ -47,13 +44,11 @@ dart: 3.6.1
 
 5 - rodar (yarn) start para iniciar a aplicação
 
-
 ### Sistema Mobile Apk
 
 1 - localizar dentro da pasta do sistema mobile o arquivo (APK APP.apk)
 
 2 - enviar para um celular e realizar a instalação padrão
-
 
 ### Sistema Mobile Realizar build
 
@@ -65,7 +60,6 @@ dart: 3.6.1
 
 4 - enviar para um celular e realizar a instalação padrão
 
-
 ### Sistema Mobile Rodar no computador
 
 1 - garantir que tem o Flutter instalado
@@ -76,11 +70,9 @@ dart: 3.6.1
 
 4 - rode (flutter run)
 
-
 ## Estratégia de testes
 
  A estrategia dos testes utilizados foram testes unitarios utilizando o Jest , Mockito, flutter_test, porem não consegui desenvolver todos os testes que gostaria.
-
 
 ## Melhorias futuras e débitos técnicos identificados
 
@@ -92,17 +84,22 @@ Login de usuários para cadastro de descontos.
 
 implementar CI/CD para deploy da aplicação
 
-
 e de debito tecnico
 
 Melhoria nos meus testes e estruturação do código FrontEnd.
-
-
 
 ## Desafios encontrados
 
 - Um dos principais desafios encontrados foi não ter feito testes unitarios em React e em Flutter e tambem nunca ter usado o Flutter Modular, portanto tive que pesquisar sobre e utilizar tutoriais e pesquisas para auxiliar o desenvolvimento.
 - Outro foi a questão de pensar em como implementar os descontos sem ter uma API delas , acabei optando por salvar localmente via SharedPreferences e assim tendo a solução para salvar as campanhas, realizando a integração com a API da fakeStore apenas para receber os dados do produto selecionado , e assim alterando o Design para ter um campo novo de Seleção de produto.
 - E é claro teve a questão de conciliar o tempo com meu serviço atual, pois precisava entregar demandas e realizar o teste ao mesmo tempo, mas espero ter ido bem!
+
+## Atualizações dia 28/01
+
+* Adicionado mais alguns testes unitarios no sistema
+* criado o deploy automatizado pela Vercel do sistema WEB (Optei pela vercel para o teste por ser gratuita e ter um facil manuseio, )
+  link: https://crescechallenge-hzv9-cmfcgxmj2-codeflowbrs-projects.vercel.app/
+
+
 
   Muito Obrigado pela opotunidade de participar do teste!
